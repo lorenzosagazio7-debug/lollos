@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica Accesso Maggiorenni</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            padding: 40px;
+        }
+        h1 {
+            color: #333;
+        }
+        #risultato {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #006400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verifica accesso al sito</h1>
+    <p id="risultato"></p>
+
+    <script>
+        // Chiediamo l’età all’utente
+        let eta = prompt("Inserisci la tua età:");
+
+        // Convertiamo la risposta in numero
+        eta = parseInt(eta);
+
+        // Variabile per il messaggio di output
+        let messaggio = "";
+
+        // Controllo dell’età
+        if (isNaN(eta) || eta < 0) {
+            messaggio = "Valore non valido. Inserisci un numero positivo.";
+        } else if (eta >= 18) {
+            messaggio = "Accesso consentito";
+        } else {
+            messaggio = "Accesso negato";
+        }
+
+        // Mostra il risultato in console
+        console.log(messaggio);
+
+        // Mostra il risultato in un alert
+        alert(messaggio);
+
+        // Mostra il risultato nella pagina web
+        document.getElementById("risultato").innerText = messaggio;
+    </script>
+</body>
+</html>
